@@ -1,0 +1,54 @@
+{
+  "manifest_version": 2,
+  "name": "Monkey 15",
+  "version": "20180804",
+  "description": "Make the web better",
+
+  "applications": {
+    "gecko": {
+      "id": "monkey15@ford-rt.com",
+      "strict_min_version": "60"
+    }
+  },
+
+  "background": {
+    "page": "assets/html/background.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["https://www.avito.ru/*"],
+      "js": ["lib/avito.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["*://discount.ulmart.ru/*"],
+      "js": ["lib/ulmart.js"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://feedly.com/i/my", "https://feedly.com/i/category/*", "https://feedly.com/i/subscription/feed*", "https://feedly.com/i/tag/user/*"],
+      "js": ["lib/feedly.js"],
+      "css": ["assets/css/feedly.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://www.phoronix.com/scan.php?page=article&*"],
+      "js": ["lib/phoronix.js"],
+      "run_at": "document_idle"
+    },
+    {
+        "matches": ["https://www.twitch.tv/directory/all"],
+        "js": [ "lib/twitch.js" ],
+        "run_at": "document_idle"
+    }
+  ],
+
+  "icons": {
+    "48": "assets/img/icon/bund.jpg"
+  },
+
+  "permissions": [
+    "notifications"
+  ]
+}
