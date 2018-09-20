@@ -29,7 +29,7 @@
     {
       "matches": ["https://feedly.com/i/my", "https://feedly.com/i/category/*", "https://feedly.com/i/subscription/feed*", "https://feedly.com/i/tag/user/*"],
       "js": ["lib/feedly.js"],
-      "css": ["assets/css/feedly.css"],
+      "css": ["assets/css/feedly.css", "assets/css/fontawesome.v5.3.1.css"],
       "run_at": "document_idle"
     },
     {
