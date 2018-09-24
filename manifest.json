@@ -17,6 +17,11 @@
 
   "content_scripts": [
     {
+      "matches": ["<all_urls>"],
+      "js": ["lib/antisovetnik.js", "lib/antijivo.js"],
+      "run_at": "document_end"
+    },
+    {
       "matches": ["https://www.avito.ru/*"],
       "js": ["lib/avito.js"],
       "run_at": "document_idle"
@@ -29,7 +34,7 @@
     {
       "matches": ["https://feedly.com/i/my", "https://feedly.com/i/category/*", "https://feedly.com/i/subscription/feed*", "https://feedly.com/i/tag/user/*"],
       "js": ["lib/feedly.js"],
-      "css": ["assets/css/feedly.css"],
+      "css": ["assets/css/feedly.css", "assets/css/fontawesome.v5.3.1.css"],
       "run_at": "document_idle"
     },
     {
