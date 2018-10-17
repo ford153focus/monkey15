@@ -1,0 +1,57 @@
+{
+    "manifest_version": 2,
+    "name": "Monkey 15",
+    "version": "2018.10",
+
+    "description": "Make the web better",
+    "icons": {
+        "16": "assets/img/icon/bund16.jpg",
+        "48": "assets/img/icon/bund48.jpg",
+        "128": "assets/img/icon/bund128.jpg"
+    },
+
+    "author": "ford153focus",
+
+    "background": {
+        "scripts": ["lib/background.js"],
+        "persistent": false
+    },
+
+    "content_scripts": [
+        {
+            "matches": ["https://www.avito.ru/*"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/avito.js"]
+        },
+        {
+            "matches": ["*://discount.ulmart.ru/*"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/ulmart.js"]
+        },
+        {
+            "matches": [
+                "https://feedly.com/i/my",
+                "https://feedly.com/i/category/*",
+                "https://feedly.com/i/subscription/feed*",
+                "https://feedly.com/i/tag/user/*"
+            ],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/feedly.js"],
+            "css": ["assets/css/feedly.css", "assets/css/fontawesome.v5.3.1.css"]
+        },
+        {
+            "matches": ["https://www.phoronix.com/scan.php?page=article&*"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/phoronix.js"]
+        },
+        {
+            "matches": ["https://www.twitch.tv/directory/all"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/twitch.js"]
+        }
+    ],
+
+    "permissions": [
+        "notifications"
+    ]
+}
