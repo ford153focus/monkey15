@@ -4,11 +4,6 @@
       "matches": ["<all_urls>"],
       "js": ["lib/antisovetnik.js", "lib/antijivo.js"],
       "run_at": "document_end"
-    },
-    {
-      "matches": ["https://habr.com/users/*/favorites/"],
-      "js": ["lib/content_scripts/habr.js"],
-      "run_at": "document_idle"
     }
   ]
 }

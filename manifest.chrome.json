@@ -40,6 +40,12 @@
             "css": ["assets/css/feedly.css", "assets/css/fontawesome.v5.3.1.css"]
         },
         {
+            "matches": ["https://habr.com/users/*/favorites/"],
+            "js": ["lib/content_scripts/habr.js"],
+            "css": ["assets/css/habr.css"],
+            "run_at": "document_idle"
+        },
+        {
             "matches": ["https://www.phoronix.com/scan.php?page=article&*"],
             "run_at": "document_idle",
             "js": ["lib/content_scripts/phoronix.js"]
