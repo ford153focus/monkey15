@@ -19,6 +19,11 @@
 
     "content_scripts": [
         {
+            "matches": ["https://3dnews.ru/*"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/3dnews.js"]
+        },
+        {
             "matches": ["https://www.avito.ru/*"],
             "run_at": "document_idle",
             "js": ["lib/content_scripts/avito.js"]
