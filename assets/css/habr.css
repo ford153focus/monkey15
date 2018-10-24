@@ -21,8 +21,7 @@ ul.content-list {
 }
 
 #fav_table > tr > td.tags ul {
-    list-style: katakana;
-    list-style-position: inside;
+    list-style: katakana inside;
     padding: 0;
 }
 

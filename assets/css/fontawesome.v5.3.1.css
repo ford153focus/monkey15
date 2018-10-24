@@ -4986,7 +4986,7 @@
 }
 
 .fab {
-    font-family: "Font Awesome 5 Brands"
+    font-family: "Font Awesome 5 Brands", monospace
 }
 
 @font-face {
@@ -5010,7 +5010,7 @@
 }
 
 .fa, .far, .fas {
-    font-family: "Font Awesome 5 Free"
+    font-family: "Font Awesome 5 Free", monospace
 }
 
 .fa, .fas {
