@@ -63,6 +63,11 @@
             "matches": ["https://www.twitch.tv/directory/all"],
             "run_at": "document_idle",
             "js": ["lib/content_scripts/twitch.js"]
+        },
+        {
+            "matches": ["http://*.wikia.com/*"],
+            "run_at": "document_idle",
+            "js": ["lib/content_scripts/wikia.com.js"]
         }
     ],
 
