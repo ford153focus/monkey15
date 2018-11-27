@@ -65,7 +65,7 @@ let manifest = {
                 "lib/content_scripts/twitch.tv/index.js"
             ],
             "matches": [
-                "https://www.twitch.tv/directory/all"
+                "https://www.twitch.tv/*"
             ],
             "run_at": "document_idle"
         },
