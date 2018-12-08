@@ -5,13 +5,10 @@
         "<all_urls>"
       ],
       "js": [
-        "lib/antisovetnik.js",
-        "lib/antijivo.js"
+        "lib/content_scripts/all_urls/antijivo.js",
+        "lib/content_scripts/all_urls/antisovetnik.js"
       ],
       "run_at": "document_end"
     }
-  ],
-  "manifest_version": 2,
-  "name": "",
-  "version": "1"
+  ]
 }

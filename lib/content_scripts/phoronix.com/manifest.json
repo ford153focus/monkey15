@@ -1,0 +1,13 @@
+{
+  "content_scripts": [
+    {
+      "js": [
+        "lib/content_scripts/phoronix.com/index.js"
+      ],
+      "matches": [
+        "https://www.phoronix.com/scan.php?page=article&*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "content_scripts": [
+    {
+      "css": [
+        "assets/css/habr.css"
+      ],
+      "js": [
+        "lib/content_scripts/habr.com/index.js"
+      ],
+      "matches": [
+        "https://habr.com/users/*/favorites/"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

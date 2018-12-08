@@ -1,3 +1,5 @@
+let fs = require('fs');
+
 let manifest = {
     "author": "ford153focus",
     "background": {
@@ -6,88 +8,7 @@ let manifest = {
             "lib/background.js"
         ]
     },
-    "content_scripts": [
-        {
-            "css": [
-                "assets/css/feedly.css",
-                "assets/css/fontawesome.v5.3.1.css"
-            ],
-            "js": [
-                "lib/content_scripts/feedly.com/index.js",
-                "lib/utils.js"
-            ],
-            "matches": [
-                "https://feedly.com/i/*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "css": [
-                "assets/css/habr.css"
-            ],
-            "js": [
-                "lib/content_scripts/habr.com/index.js"
-            ],
-            "matches": [
-                "https://habr.com/users/*/favorites/"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/3dnews.ru/index.js"
-            ],
-            "matches": [
-                "https://3dnews.ru/*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/avito.ru/index.js"
-            ],
-            "matches": [
-                "https://www.avito.ru/*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/phoronix.com/index.js"
-            ],
-            "matches": [
-                "https://www.phoronix.com/scan.php?page=article&*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/twitch.tv/index.js"
-            ],
-            "matches": [
-                "https://www.twitch.tv/*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/ulmart.ru/index.js"
-            ],
-            "matches": [
-                "*://discount.ulmart.ru/*"
-            ],
-            "run_at": "document_idle"
-        },
-        {
-            "js": [
-                "lib/content_scripts/wikia.com/index.js"
-            ],
-            "matches": [
-                "http://*.wikia.com/*"
-            ],
-            "run_at": "document_idle"
-        }
-    ],
+    "content_scripts": [],
     "description": "Make the web better",
     "icons": {
         "16": "assets/img/icon/bund16.jpg",
@@ -125,4 +46,14 @@ switch (process.argv[2]) {
         break;
 }
 
-(require('fs')).writeFile('manifest.json', JSON.stringify(manifest), (err) => {if (err) throw err;});
+let content_scripts_dir = __dirname + "/lib/content_scripts/";
+
+for (let item of fs.readdirSync(content_scripts_dir)) {
+    let content_script_manifest = __dirname + "/lib/content_scripts/"+item+"/manifest.json";
+    if (fs.existsSync(content_script_manifest) === true) {
+        let obj = JSON.parse(fs.readFileSync(content_script_manifest, 'utf8'));
+        manifest.content_scripts = manifest.content_scripts.concat(obj.content_scripts);
+    }
+}
+
+fs.writeFileSync('manifest.json', JSON.stringify(manifest));

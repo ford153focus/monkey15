@@ -1,0 +1,18 @@
+{
+  "content_scripts": [
+    {
+      "css": [
+        "assets/css/feedly.css",
+        "assets/css/fontawesome.v5.3.1.css"
+      ],
+      "js": [
+        "lib/content_scripts/feedly.com/index.js",
+        "lib/utils.js"
+      ],
+      "matches": [
+        "https://feedly.com/i/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
