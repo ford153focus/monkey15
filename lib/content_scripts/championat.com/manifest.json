@@ -1,0 +1,13 @@
+{
+  "content_scripts": [
+    {
+      "js": [
+        "lib/content_scripts/championat.com/adblock.js"
+      ],
+      "matches": [
+        "https://www.championat.com/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

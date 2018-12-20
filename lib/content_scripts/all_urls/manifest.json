@@ -1,0 +1,13 @@
+{
+  "content_scripts": [
+    {
+      "js": [
+        "lib/content_scripts/all_urls/adblock.js"
+      ],
+      "matches": [
+        "<all_urls>"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

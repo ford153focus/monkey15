@@ -1,0 +1,13 @@
+{
+  "content_scripts": [
+    {
+      "js": [
+        "lib/content_scripts/pixlr.com/adblock.js"
+      ],
+      "matches": [
+        "https://pixlr.com/editor/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

@@ -2,7 +2,16 @@
   "content_scripts": [
     {
       "js": [
-        "lib/content_scripts/phoronix.com/index.js"
+        "lib/content_scripts/phoronix.com/adblock.js"
+      ],
+      "matches": [
+        "https://www.phoronix.com/*"
+      ],
+      "run_at": "document_idle"
+    },
+    {
+      "js": [
+        "lib/content_scripts/phoronix.com/shortcuts.js"
       ],
       "matches": [
         "https://www.phoronix.com/scan.php?page=article&*"
