@@ -5,7 +5,7 @@
         "lib/content_scripts/overclockers.ru/adblock.js"
       ],
       "matches": [
-        "https://overclockers.ru/blog/*"
+        "https://overclockers.ru/*"
       ],
       "run_at": "document_idle"
     }
