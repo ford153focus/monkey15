@@ -2,7 +2,9 @@
   "content_scripts": [
     {
       "js": [
-        "lib/content_scripts/ulmart.ru/index.js"
+        "lib/content_scripts/ulmart.ru/filter.js",
+        "lib/content_scripts/ulmart.ru/loader.js",
+        "lib/content_scripts/ulmart.ru/parameters.js"
       ],
       "matches": [
         "*://discount.ulmart.ru/*"
