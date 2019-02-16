@@ -2,7 +2,7 @@
   "content_scripts": [
     {
       "css": [
-        "assets/css/habr.css"
+        "assets/habr.com/css/styles.css"
       ],
       "js": [
         "lib/content_scripts/habr.com/index.js"

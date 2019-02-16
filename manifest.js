@@ -15,9 +15,9 @@ let manifest = {
     'content_scripts': [],
     'description'    : 'Make the web better',
     'icons'          : {
-        '16' : 'assets/img/icon/bund16.jpg',
-        '48' : 'assets/img/icon/bund48.jpg',
-        '128': 'assets/img/icon/bund128.jpg'
+        '16' : 'assets/shared/img/icon/bund16.jpg',
+        '48' : 'assets/shared/img/icon/bund48.jpg',
+        '128': 'assets/shared/img/icon/bund128.jpg'
     },
     'manifest_version': 2,
     'name'            : 'Monkey 15',
