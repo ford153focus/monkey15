@@ -25,7 +25,7 @@ let manifest = {
         'notifications'
     ],
     'web_accessible_resources': [
-        'assets/html/feedly_actions.html'
+        'assets/*'
     ]
 };
 
