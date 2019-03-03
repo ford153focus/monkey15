@@ -3,7 +3,7 @@
     {
       "js": [
         "lib/content_scripts/twitch.tv/adblock.js",
-        "lib/content_scripts/twitch.tv/casino.js"
+        "lib/content_scripts/twitch.tv/filter.js"
       ],
       "matches": [
         "https://www.twitch.tv/*"
