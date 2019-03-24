@@ -36,9 +36,15 @@ function generateForFirefox() {
             'strict_min_version': '60.0'
         }
     };
+
+    let d = new Date();
+    manifest.version = `${d.getFullYear()}.${d.getMonth()}.${d.getDate()}rc${d.getHours()}`;
 }
 
-manifest.version = require('phpdate-js')('y.m.d.H');
+function generateForChrome() {
+    let d = new Date();
+    manifest.version = `${d.getFullYear()}.${d.getMonth()}.${d.getDate()}.${d.getHours()}`;
+}
 
 switch (process.argv[2]) {
 case '--firefox':
@@ -47,6 +53,7 @@ case '--firefox':
     break;
 case '--chrome':
     console.log('Generating manifest for Google Chrome');
+    generateForChrome();
     break;
 default:
     console.log('No valid browser specified');
