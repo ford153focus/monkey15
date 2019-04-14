@@ -5,31 +5,7 @@
         "lib/content_scripts/lenta.com/sort.js"
       ],
       "matches": [
-        "https://lenta.com/alkogol-3rd-august/",
-        "https://lenta.com/avtotovary-instrumenty/",
-        "https://lenta.com/bakaleya/",
-        "https://lenta.com/bel-e-i-obuv-dlya-doma/",
-        "https://lenta.com/bytovaya-himiya-tovary-dlya-zhivotnyh/",
-        "https://lenta.com/bytovaya-tehnika/",
-        "https://lenta.com/chay-kofe-torty-hleb/",
-        "https://lenta.com/detskaya-odezhda-i-obuv/",
-        "https://lenta.com/gastronom/",
-        "https://lenta.com/konditerskie-izdeliya/",
-        "https://lenta.com/kosmetika/",
-        "https://lenta.com/molochnye-produkty-zamorozhennye-produkty/",
-        "https://lenta.com/moreprodukty/",
-        "https://lenta.com/mul-timedia/",
-        "https://lenta.com/myaso-vypechka-kulinariya/",
-        "https://lenta.com/napitki/",
-        "https://lenta.com/odezhda/",
-        "https://lenta.com/ovoschi-frukty/",
-        "https://lenta.com/sezonnye-tovary-kancelyariya/",
-        "https://lenta.com/special-nye-predlozheniya/",
-        "https://lenta.com/sportivnye-tovary/",
-        "https://lenta.com/tovary-dlya-detey/",
-        "https://lenta.com/tovary-dlya-doma-posuda/",
-        "https://lenta.com/tovary-dlya-doma-tekstil/",
-        "https://lenta.com/tovary-s-oblozhki/"
+        "https://lenta.com/catalog/*"
       ],
       "run_at": "document_idle"
     }
