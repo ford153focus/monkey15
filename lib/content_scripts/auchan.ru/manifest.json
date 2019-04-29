@@ -1,0 +1,16 @@
+{
+  "content_scripts": [
+    {
+      "css": [
+        "assets/auchan.ru/css/styles.css"
+      ],
+      "js": [
+        "lib/content_scripts/auchan.ru/sort.js"
+      ],
+      "matches": [
+        "https://www.auchan.ru/pokupki/eda/*.html*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
