@@ -1,0 +1,3 @@
+iframe[src^='http://coub.com/embed/'] .viewer__suggests {
+    display: none;
+}
