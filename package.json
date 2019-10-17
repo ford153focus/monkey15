@@ -2,6 +2,6 @@
   "name": "monkey15",
   "version": "1.0.0",
   "dependencies": {
-    "web-ext": "^3.1.1"
+    "web-ext": "^3.2.0"
   }
 }
