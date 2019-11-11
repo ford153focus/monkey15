@@ -1,0 +1,16 @@
+{
+  "content_scripts": [
+    {
+      "css": [
+        "assets/joyreactor.cc/rate4comments.css"
+      ],
+      "js": [
+        "lib/content_scripts/joyreactor.cc/rate4comments.js"
+      ],
+      "matches": [
+        "http://joyreactor.cc/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
