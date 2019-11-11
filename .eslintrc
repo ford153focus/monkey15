@@ -1,6 +1,5 @@
 {
   "rules": {
-    "extends": "eslint:recommended",
     // POSSIBLE ERRORS
     "for-direction": "error",
     "getter-return" : ["error", { "allowImplicit": true }],
@@ -135,7 +134,7 @@
     ],
     "max-len": [
       "error",
-      120,
+      150,
       4,
       {
         "ignoreComments": true,
@@ -208,7 +207,8 @@
     ]
   },
   "globals": {
-    "$": false
+    "$": false,
+    "fetch": false
   },
   "env": {
     "browser": true,
