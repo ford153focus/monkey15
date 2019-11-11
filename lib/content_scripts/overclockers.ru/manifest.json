@@ -1,13 +1,13 @@
 {
-  "content_scripts": [
-    {
-      "js": [
-        "lib/content_scripts/overclockers.ru/adblock.js"
-      ],
-      "matches": [
-        "https://overclockers.ru/*"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/overclockers.ru/adblock.js"
+            ],
+            "matches": [
+                "https://overclockers.ru/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
 }

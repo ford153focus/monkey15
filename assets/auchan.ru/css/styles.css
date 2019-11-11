@@ -1,4 +1,4 @@
-.products__item.product__item--unavailable .products__item-inner::before {
+.products__item.product__item--unavailable .products__item-inner:before {
     width: 0;
 }
 
@@ -7,4 +7,3 @@
     font-size: 8px;
     margin-top: -82px;
 }
-    

@@ -1,17 +1,17 @@
 {
-  "content_scripts": [
-    {
-      "css": [
-        "assets/twitch.tv/css/styles.css"
-      ],
-      "js": [
-        "lib/content_scripts/twitch.tv/adblock.js",
-        "lib/content_scripts/twitch.tv/filter.js"
-      ],
-      "matches": [
-        "https://www.twitch.tv/*"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+    "content_scripts": [
+        {
+            "css": [
+                "assets/twitch.tv/css/styles.css"
+            ],
+            "js": [
+                "lib/content_scripts/twitch.tv/adblock.js",
+                "lib/content_scripts/twitch.tv/filter.js"
+            ],
+            "matches": [
+                "https://www.twitch.tv/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
 }

@@ -1,15 +1,15 @@
 {
-  "content_scripts": [
-    {
-      "js": [
-        "lib/content_scripts/ulmart.ru/filter.js",
-        "lib/content_scripts/ulmart.ru/loader.js",
-        "lib/content_scripts/ulmart.ru/parameters.js"
-      ],
-      "matches": [
-        "*://discount.ulmart.ru/*"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/ulmart.ru/filter.js",
+                "lib/content_scripts/ulmart.ru/loader.js",
+                "lib/content_scripts/ulmart.ru/parameters.js"
+            ],
+            "matches": [
+                "*://discount.ulmart.ru/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
 }

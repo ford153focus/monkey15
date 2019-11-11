@@ -33,7 +33,7 @@ let manifest = {
 let content_scripts_dir = path.join(__dirname, '/lib/content_scripts/');
 
 for (let item of fs.readdirSync(content_scripts_dir)) {
-    let contentScriptManifestPath = path.join(__dirname, '/lib/content_scripts/'+item+'/manifest.json');
+    let contentScriptManifestPath = path.join(__dirname, '/lib/content_scripts/' + item + '/manifest.json');
     if (fs.existsSync(contentScriptManifestPath) === true) {
         let contentScriptManifest = JSON.parse(fs.readFileSync(contentScriptManifestPath, 'utf8'));
         manifest.content_scripts = manifest.content_scripts.concat(contentScriptManifest.content_scripts);
@@ -51,7 +51,7 @@ function generateForFirefox() {
     };
 
     let d = new Date();
-    manifest.version = `${d.getFullYear()}.${d.getMonth()+1}.${d.getDate()}rc${d.getHours()}`;
+    manifest.version = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}rc${d.getHours()}`;
 
     webExt.util.logger.consoleStream.makeVerbose();
     webExt.cmd.build({
@@ -59,6 +59,8 @@ function generateForFirefox() {
         ignoreFiles  : [],
         overwriteDest: true,
         sourceDir    : '.'
+    }, {}).then(() => {
+        return console.log('built by webExt')
     });
 }
 
@@ -66,7 +68,7 @@ function generateForChrome() {
     console.log('Generating manifest for Google Chrome');
 
     let d = new Date();
-    manifest.version = `${d.getFullYear()}.${d.getMonth()+1}.${d.getDate()}.${d.getHours()}`;
+    manifest.version = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}.${d.getHours()}`;
 }
 
 switch (process.argv[2]) {

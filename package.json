@@ -1,7 +1,7 @@
 {
-  "name": "monkey15",
-  "version": "1.0.0",
-  "dependencies": {
-    "web-ext": "^3.2.0"
-  }
+    "name": "monkey15",
+    "version": "1.0.0",
+    "dependencies": {
+        "web-ext": "^3.2.1"
+    }
 }

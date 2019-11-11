@@ -1,14 +1,14 @@
 {
-  "content_scripts": [
-    {
-      "js": [
-        "lib/content_scripts/3dnews.ru/adblock.js",
-        "lib/content_scripts/3dnews.ru/no_comments.js"
-      ],
-      "matches": [
-        "https://3dnews.ru/*"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/3dnews.ru/adblock.js",
+                "lib/content_scripts/3dnews.ru/no_comments.js"
+            ],
+            "matches": [
+                "https://3dnews.ru/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
 }

@@ -1,22 +1,22 @@
 {
-  "content_scripts": [
-    {
-      "js": [
-        "lib/content_scripts/lenta.com/sort.js"
-      ],
-      "matches": [
-        "https://lenta.com/catalog/*"
-      ],
-      "run_at": "document_idle"
-    },
-    {
-      "js": [
-        "lib/content_scripts/lenta.com/print_cart.js"
-      ],
-      "matches": [
-        "https://lenta.com/shoppinglist/"
-      ],
-      "run_at": "document_idle"
-    }
-  ]
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/lenta.com/sort.js"
+            ],
+            "matches": [
+                "https://lenta.com/catalog/*"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "js": [
+                "lib/content_scripts/lenta.com/print_cart.js"
+            ],
+            "matches": [
+                "https://lenta.com/shoppinglist/"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
 }
