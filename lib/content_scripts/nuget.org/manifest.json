@@ -5,7 +5,7 @@
                 "lib/content_scripts/nuget.org/sort.js"
             ],
             "matches": [
-                "https://www.nuget.org/packages?q=*"
+                "https://www.nuget.org/packages?*"
             ],
             "run_at": "document_idle"
         }
