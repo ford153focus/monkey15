@@ -2,6 +2,7 @@
     "content_scripts": [
         {
             "js": [
+                "lib/content_scripts/avito.ru/adblock.js",
                 "lib/content_scripts/avito.ru/index.js"
             ],
             "matches": [
