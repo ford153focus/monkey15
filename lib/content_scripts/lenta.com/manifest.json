@@ -5,7 +5,8 @@
                 "lib/content_scripts/lenta.com/sort.js"
             ],
             "matches": [
-                "https://lenta.com/catalog/*"
+                "https://lenta.com/catalog/*",
+                "https://lenta.com/search/?searchText=*"
             ],
             "run_at": "document_idle"
         },
