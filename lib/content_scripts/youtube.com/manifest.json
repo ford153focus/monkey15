@@ -1,0 +1,13 @@
+{
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/youtube.com/sort.js"
+            ],
+            "matches": [
+                "https://www.youtube.com/channel/*/videos"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
