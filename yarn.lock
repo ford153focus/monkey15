@@ -2961,9 +2961,9 @@ lodash.sortby@^4.7.0:
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
 lodash@^4.0.0, lodash@^4.14.0, lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.12, lodash@^4.17.14, lodash@^4.3.0, lodash@^4.8.0, lodash@~4.17.2:
-  version "4.17.15"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.15.tgz#b447f6670a0455bbfeedd11392eff330ea097548"
-  integrity sha512-8xOcRHvCjnocdS5cpwXQXVzmmh5e5+saE2QGoeQmbKmRS6J3VQppPOIt0MnmE+4xlZoumy0GPG0D0MVIQbNA1A==
+  version "4.17.19"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.19.tgz#e48ddedbe30b3321783c5b4301fbd353bc1e4a4b"
+  integrity sha512-JNvd8XER9GQX0v2qJgsaN/mzFCNA5BRe/j8JN9d+tWyGLSodKQHKFicdwNYzWwI3wjRnaKPsGj1XkBjx/F96DQ==
 
 lowercase-keys@^1.0.0, lowercase-keys@^1.0.1:
   version "1.0.1"
@@ -4822,10 +4822,10 @@ wcwidth@^1.0.0:
   dependencies:
     defaults "^1.0.3"
 
-web-ext@^3.2.0:
-  version "3.2.0"
-  resolved "https://registry.yarnpkg.com/web-ext/-/web-ext-3.2.0.tgz#090fe43d777acc7a4741e034e36cc116fcf13843"
-  integrity sha512-UM2ucXzEKs6tD+YT6FjmfIeQtLy4t9CwdwyQl8Nthn2BbGgDLht+wBWsU8VYnNXtrObxX24Co8oaF7Id06JbgA==
+web-ext@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/web-ext/-/web-ext-3.2.1.tgz#5fa9f683d4ca804b42324593b1acedca375ab68d"
+  integrity sha512-WzZbCDIjIUshZRVaiYFbaMp/1/xPjW7qeTQ0F7Xx1MYkamZ4RN5dnhxWFz+Hzg6GzhFdny+zucNDKOwYfAV3LA==
   dependencies:
     "@babel/polyfill" "7.6.0"
     "@babel/runtime" "7.6.2"
