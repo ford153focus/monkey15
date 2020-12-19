@@ -1,0 +1,13 @@
+{
+    "content_scripts": [
+        {
+            "js": [
+                "lib/content_scripts/sushiwok.ru/sort.js"
+            ],
+            "matches": [
+                "https://sushiwok.ru/kudrovo/akcii/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
