@@ -243,7 +243,8 @@
         "padded-blocks": [
             "error",
             "never"
-        ]
+        ],
+        "strict": 0
     },
     "globals": {
         "$": false,
@@ -255,6 +256,7 @@
         "es6": true,
         "amd": true
     },
+    "parser": "babel-eslint",
     "parserOptions": {
         "ecmaVersion": 2017
     }
