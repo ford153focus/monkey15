@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const path = require('path');
-const webExt = require('web-ext').default;
+const webExt = require('web-ext');
 
 let manifest = {
     'author'    : 'ford153focus',
@@ -26,7 +26,8 @@ let manifest = {
         'notifications'
     ],
     'web_accessible_resources': [
-        'assets/*'
+        'assets/*',
+        'lib/*'
     ]
 };
 
@@ -36,7 +37,14 @@ for (let item of fs.readdirSync(content_scripts_dir)) {
     let contentScriptManifestPath = path.join(__dirname, '/lib/content_scripts/' + item + '/manifest.json');
     if (fs.existsSync(contentScriptManifestPath) === true) {
         let contentScriptManifest = JSON.parse(fs.readFileSync(contentScriptManifestPath, 'utf8'));
-        manifest.content_scripts = manifest.content_scripts.concat(contentScriptManifest.content_scripts);
+
+        if (contentScriptManifest.content_scripts) {
+            manifest.content_scripts = manifest.content_scripts.concat(contentScriptManifest.content_scripts);
+        }
+
+        if (contentScriptManifest.web_accessible_resources) {
+            manifest.web_accessible_resources = manifest.web_accessible_resources.concat(contentScriptManifest.web_accessible_resources);
+        }
     }
 }
 
