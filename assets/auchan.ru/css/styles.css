@@ -1,9 +1,0 @@
-.products__item.product__item--unavailable .products__item-inner:before {
-    width: 0;
-}
-
-.product__item--unavailable-msg {
-    color: #666;
-    font-size: 8px;
-    margin-top: -82px;
-}

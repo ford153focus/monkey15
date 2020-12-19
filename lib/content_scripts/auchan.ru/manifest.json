@@ -2,15 +2,20 @@
     "content_scripts": [
         {
             "css": [
-                "assets/auchan.ru/css/styles.css"
+                "lib/content_scripts/auchan.ru/styles.css"
             ],
             "js": [
-                "lib/content_scripts/auchan.ru/sort.js"
+                "lib/content_scripts/auchan.ru/injector.js"
             ],
             "matches": [
-                "https://www.auchan.ru/pokupki/eda/*.html*"
+                "https://www.auchan.ru/superceny/",
+                "https://www.auchan.ru/catalog/*"
             ],
             "run_at": "document_idle"
         }
+    ],
+    "web_accessible_resources": [
+        "lib/content_scripts/auchan.ru/filtersBar.html",
+        "lib/content_scripts/auchan.ru/script.js"
     ]
 }
