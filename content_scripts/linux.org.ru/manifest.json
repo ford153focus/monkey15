@@ -1,0 +1,13 @@
+{
+    "content_scripts": [
+        {
+            "css": [
+                "content_scripts/linux.org.ru/css/style.css"
+            ],
+            "matches": [
+                "https://www.linux.org.ru/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}

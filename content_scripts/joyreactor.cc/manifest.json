@@ -1,0 +1,18 @@
+{
+  "content_scripts": [
+    {
+      "css": [
+        "content_scripts/joyreactor.cc/css/rate4comments.css"
+      ],
+      "js": [
+        "content_scripts/joyreactor.cc/js/rate4comments.js",
+        "content_scripts/joyreactor.cc/js/resize_answer_field.js"
+      ],
+      "matches": [
+        "http://joyreactor.cc/*",
+        "http://*.reactor.cc/*"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

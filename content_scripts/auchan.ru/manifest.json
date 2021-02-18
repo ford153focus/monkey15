@@ -1,0 +1,30 @@
+{
+    "content_scripts": [
+        {
+            "css": [
+                "content_scripts/auchan.ru/css/styles.css"
+            ],
+            "js": [
+                "content_scripts/auchan.ru/js/injector.js"
+            ],
+            "matches": [
+                "https://www.auchan.ru/superceny/",
+                "https://www.auchan.ru/catalog/*"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "js": [
+                "content_scripts/auchan.ru/js/cart_printer.js"
+            ],
+            "matches": [
+                "https://www.auchan.ru/cart/"
+            ],
+            "run_at": "document_idle"
+        }
+    ],
+    "web_accessible_resources": [
+        "web_accessible_resources/auchan.ru/filtersBar.html",
+        "web_accessible_resources/auchan.ru/script.js"
+    ]
+}

@@ -10,15 +10,15 @@ let manifest = {
     'background': {
         'persistent': false,
         'scripts'   : [
-            'lib/background.js'
+            'background/scripts/background.js'
         ]
     },
     'content_scripts': [],
     'description'    : 'Make the web better',
     'icons'          : {
-        '16' : 'assets/shared/img/icon/bund16.jpg',
-        '48' : 'assets/shared/img/icon/bund48.jpg',
-        '128': 'assets/shared/img/icon/bund128.jpg'
+        '16' : 'icons/bund16.jpg',
+        '48' : 'icons/bund48.jpg',
+        '128': 'icons/bund128.jpg'
     },
     'manifest_version': 2,
     'name'            : 'Monkey 15',
@@ -26,15 +26,15 @@ let manifest = {
         'notifications'
     ],
     'web_accessible_resources': [
-        'assets/*',
+        'web_accessible_resources/*',
         'lib/*'
     ]
 };
 
-let content_scripts_dir = path.join(__dirname, '/lib/content_scripts/');
+let content_scripts_dir = path.join(__dirname, '/content_scripts/');
 
 for (let item of fs.readdirSync(content_scripts_dir)) {
-    let contentScriptManifestPath = path.join(__dirname, '/lib/content_scripts/' + item + '/manifest.json');
+    let contentScriptManifestPath = path.join(__dirname, '/content_scripts/' + item + '/manifest.json');
     if (fs.existsSync(contentScriptManifestPath) === true) {
         let contentScriptManifest = JSON.parse(fs.readFileSync(contentScriptManifestPath, 'utf8'));
 

@@ -1,0 +1,18 @@
+{
+    "content_scripts": [
+        {
+            "css": [
+                "content_scripts/twitch.tv/css/styles.css"
+            ],
+            "js": [
+                "content_scripts/twitch.tv/js/adblock.js",
+                "content_scripts/twitch.tv/js/bonus_hunter.js",
+                "content_scripts/twitch.tv/js/streams_filter.js"
+            ],
+            "matches": [
+                "https://www.twitch.tv/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}

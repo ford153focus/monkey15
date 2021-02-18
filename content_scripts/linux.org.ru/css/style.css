@@ -1,0 +1,8 @@
+textarea#msg {
+    padding: 1mm;
+    width: 95% !important;
+}
+
+input#title {
+    width: 95% !important;
+}

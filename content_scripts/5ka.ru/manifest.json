@@ -1,0 +1,14 @@
+{
+    "content_scripts": [
+        {
+            "js": [
+                "content_scripts/5ka.ru/js/Sorter.js",
+                "content_scripts/5ka.ru/js/sort.js"
+            ],
+            "matches": [
+                "https://5ka.ru/special_offers/*"
+            ],
+            "run_at": "document_idle"
+        }
+    ]
+}
