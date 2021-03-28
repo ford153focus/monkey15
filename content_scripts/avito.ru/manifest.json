@@ -1,12 +1,24 @@
 {
     "content_scripts": [
         {
+            "css": [
+                "content_scripts/avito.ru/css/styles.css"
+            ],
             "js": [
                 "content_scripts/avito.ru/js/adblock.js",
                 "content_scripts/avito.ru/js/ad_filter.js"
             ],
             "matches": [
                 "https://www.avito.ru/*"
+            ],
+            "run_at": "document_idle"
+        },
+        {
+            "js": [
+                "content_scripts/avito.ru/js/ad_hider.js"
+            ],
+            "matches": [
+                "https://www.avito.ru/*/*"
             ],
             "run_at": "document_idle"
         },
