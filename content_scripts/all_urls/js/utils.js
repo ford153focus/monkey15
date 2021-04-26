@@ -45,17 +45,17 @@ window._frt.fetchJsonSync = (url) => {
 window._frt.loadBootstrap = () => {
     let tag = document.createElement('link');
     tag.rel = 'stylesheet';
-    tag.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css';
+    tag.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css';
     tag.crossorigin = 'anonymous';
     document.head.appendChild(tag);
 
     let popperScript = document.createElement('script');
-    popperScript.src = 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js';
+    popperScript.src = 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js';
     popperScript.crossorigin = 'anonymous';
     document.head.appendChild(popperScript);
 
     let bootstrapScript = document.createElement('script');
-    bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js';
+    bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js';
     bootstrapScript.crossorigin = 'anonymous';
     document.head.appendChild(bootstrapScript);
 }
