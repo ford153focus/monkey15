@@ -3,7 +3,6 @@
 
 const fs = require('fs');
 const path = require('path');
-const webExt = require('web-ext');
 
 let manifest = {
     'author'    : 'ford153focus',
@@ -61,6 +60,7 @@ function generateForFirefox() {
     let d = new Date();
     manifest.version = `${d.getFullYear()}.${d.getMonth() + 1}.${d.getDate()}rc${d.getHours()}`;
 
+    const webExt = require('web-ext');
     webExt.util.logger.consoleStream.makeVerbose();
     webExt.cmd.build({
         artifactsDir : './web-ext-artifacts',
