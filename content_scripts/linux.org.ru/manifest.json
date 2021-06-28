@@ -11,7 +11,7 @@
         },
         {
             "js": [
-                "content_scripts/linux.org.ru/js/tracked_and_favs_as_table.js"
+                "content_scripts/linux.org.ru/js/favs_utils.js"
             ],
             "matches": [
                 "https://www.linux.org.ru/people/*/tracked",
