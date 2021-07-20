@@ -1,11 +1,11 @@
 {
     "content_scripts": [
         {
-            "js": [
-                "content_scripts/all_urls/js/utils.js"
+            "css": [
+                "content_scripts/coub.com/css/hide_suggestions.css"
             ],
             "matches": [
-                "<all_urls>"
+                "https://coub.com/embed/*"
             ],
             "run_at": "document_idle"
         }
