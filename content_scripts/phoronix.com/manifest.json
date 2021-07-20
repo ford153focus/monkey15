@@ -11,7 +11,7 @@
         },
         {
             "js": [
-                "content_scripts/phoronix.com/js/shortcuts.js"
+                "content_scripts/phoronix.com/js/hotkeys.js"
             ],
             "matches": [
                 "https://www.phoronix.com/scan.php?page=article&*"

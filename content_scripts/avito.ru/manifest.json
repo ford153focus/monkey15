@@ -15,7 +15,8 @@
         },
         {
             "js": [
-                "content_scripts/avito.ru/js/ad_hider.js"
+                "content_scripts/avito.ru/js/ad_hider.js",
+                "content_scripts/avito.ru/js/hotkeys.js"
             ],
             "matches": [
                 "https://www.avito.ru/*/*"
