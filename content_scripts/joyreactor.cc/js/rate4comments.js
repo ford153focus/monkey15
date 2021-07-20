@@ -21,45 +21,51 @@ async function vote(span) {
     document.documentElement.appendChild(script);
 })();
 
-for (const h3 of document.getElementsByTagName('h3')) {
-    if (h3.innerText !== 'Отличный комментарий!') continue;
-
-    let highlightedComments = h3.parentNode.parentNode.querySelectorAll('div.comment.hightlighted.filled');
+/**
+ * Draw buttons
+ */
+(() => {
     let voteUpTag = '<span class="c-vote-plus" title="vote up" data-vote="plus" onclick="vote(this)"></span>';
     let voteDownTag = '<span class="c-vote-minus" title="vote down" data-vote="minus" onclick="vote(this)"></span>';
 
-    for (const comment of highlightedComments) {
-        const ratingTag = comment.getElementsByClassName('post_rating')[0];
-        ratingTag.insertAdjacentHTML('afterbegin', voteUpTag);
-        ratingTag.insertAdjacentHTML('beforeend', voteDownTag);
+    let h3tags = document.getElementsByTagName('h3');
+    h3tags = Array.from(h3tags);
+    h3tags = h3tags.filter(header => header.innerText === 'Отличный комментарий!');
 
-        const commentText = comment.querySelector('div').innerText.trim();
-        if (commentText === 'Комментарий скрыт.') {
-            let commentId = new URL(comment.querySelector('a.comment_link').href).hash.match(/\d+$/g)[0];
-            fetch(`/post/comment/${commentId}`).then(async (response) => {
-                comment.querySelector('div').innerHTML = await response.text();
-            });
+    for (let h3 of h3tags) {
+        let highlightedComments = h3.parentNode.parentNode.querySelectorAll('div.comment.hightlighted.filled');
+
+        for (let comment of highlightedComments) {
+            const ratingTag = comment.getElementsByClassName('post_rating')[0];
+            ratingTag.insertAdjacentHTML('afterbegin', voteUpTag);
+            ratingTag.insertAdjacentHTML('beforeend', voteDownTag);
         }
     }
-}
+})();
 
 /**
  * Get styles of original vote buttons
  * and apply them to own custom vote buttons
  */
 (() => {
-    const plusVoterStyles = window.getComputedStyle(document.querySelector('div.vote-plus'));
-    const minusVoterStyles = window.getComputedStyle(document.querySelector('div.vote-minus'));
+    let originalPlusButton = document.querySelector('div.vote-plus');
+    let originalMinusButton = document.querySelector('div.vote-minus');
 
-    for (const customUpVoter of document.querySelectorAll('span.c-vote-plus')) {
-        for (let style of plusVoterStyles) {
-            customUpVoter.style[style] = plusVoterStyles[style];
-        }
-    }
+    if (originalPlusButton === null) return;
+    if (originalMinusButton === null) return;
 
-    for (const customDownVoter of document.querySelectorAll('span.c-vote-minus')) {
-        for (let style of minusVoterStyles) {
-            customDownVoter.style[style] = minusVoterStyles[style];
-        }
-    }
+    let originalPlusStyles = window.getComputedStyle(originalPlusButton);
+    let originalMinusStyles = window.getComputedStyle(originalMinusButton);
+
+    let customPlusButtons = document.querySelectorAll('span.c-vote-plus');
+    let customMinusButtons = document.querySelectorAll('span.c-vote-minus');
+
+    for (let cButton of customPlusButtons)
+        for (let style of originalPlusStyles)
+            cButton.style[style] = originalPlusStyles[style];
+
+
+    for (let cButton of customMinusButtons)
+        for (let style of originalMinusStyles)
+            cButton.style[style] = originalMinusStyles[style];
 })();

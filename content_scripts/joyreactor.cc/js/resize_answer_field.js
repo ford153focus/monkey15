@@ -1,9 +1,16 @@
-for (const responseButton of document.querySelectorAll('a.response')) {
-    responseButton.onclick = () => {
-        for (const responseField of document.querySelectorAll('textarea.comment_text')) {
-            responseField.addEventListener('keyup', () => {
-                responseField.style.height = responseField.value ? `${responseField.scrollHeight+5}px` : 'auto';
-            });
-        }
-    };
+function fixHeight(event) {
+    let commentInput = event.target;
+    if (commentInput.scrollHeight !== commentInput.clientHeight) {
+        commentInput.style.height = commentInput.scrollHeight+5+'px';
+    }
 }
+
+function assignWatcher() {
+    let commentInputs = document.querySelectorAll('textarea.comment_text');
+
+    for (const commentInput of commentInputs) {
+        commentInput.onkeyup = fixHeight;
+    }
+}
+
+document.onmouseup = assignWatcher;

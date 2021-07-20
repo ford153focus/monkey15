@@ -6,7 +6,8 @@
       ],
       "js": [
         "content_scripts/joyreactor.cc/js/rate4comments.js",
-        "content_scripts/joyreactor.cc/js/resize_answer_field.js"
+        "content_scripts/joyreactor.cc/js/resize_answer_field.js",
+        "content_scripts/joyreactor.cc/js/unhide_comments.js"
       ],
       "matches": [
         "http://joyreactor.cc/*",
