@@ -9,7 +9,8 @@ let manifest = {
     'background': {
         'persistent': false,
         'scripts'   : [
-            'background/scripts/background.js'
+            'background/scripts/background.js',
+            'content_scripts/all_urls/js/utils.js'
         ]
     },
     'content_scripts': [],
