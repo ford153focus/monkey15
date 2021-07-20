@@ -1,10 +1,22 @@
-window._frt = {};
-
-document.removeSelectorAll = (selector) => {
-    for (const el of document.querySelectorAll(selector)) {
-        el.remove();
+document.removeSelectorAll = (selector, method='remove') => {
+    let elements = document.querySelectorAll(selector);
+    for (let el of elements) {
+        switch (method) {
+            case 'clear':
+                el.innerHTML = '';
+                break;
+            case 'hide':
+                el.style.display = 'none';
+                break;
+            case 'remove':
+            default:
+                el.remove();
+                break;
+        }
     }
 }
+
+window._frt = {};
 
 window._frt.getExtensionFileContent = (filePath) => {
     let url = browser.runtime.getURL(filePath);
@@ -23,7 +35,6 @@ window._frt.getExtensionFileContent = (filePath) => {
 window._frt.fetchJson = async (url) => {
     const response = await fetch(url);
     const json = await response.json();
-    console.log(json);
     return json;
 }
 
@@ -40,46 +51,63 @@ window._frt.fetchJsonSync = (url) => {
 }
 
 /**
- * Dynamically load Bootstrap-library
+ * Inject style sheet to current page
+ * @param {string} url url of style sheet
  */
-window._frt.loadBootstrap = () => {
+window._frt.loadStyleSheet = (url) => {
     let tag = document.createElement('link');
     tag.rel = 'stylesheet';
-    tag.href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css';
+    tag.href = url;
     tag.crossorigin = 'anonymous';
     document.head.appendChild(tag);
-
-    let popperScript = document.createElement('script');
-    popperScript.src = 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js';
-    popperScript.crossorigin = 'anonymous';
-    document.head.appendChild(popperScript);
-
-    let bootstrapScript = document.createElement('script');
-    bootstrapScript.src = 'https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.min.js';
-    bootstrapScript.crossorigin = 'anonymous';
-    document.head.appendChild(bootstrapScript);
 }
 
 /**
- * Dynamically load font awesome
+ * Inject script to current page
+ * @param {string} url url of script
  */
-window._frt.loadFontAwesome = () => {
-    let tag = document.createElement('link');
-    tag.rel = 'stylesheet';
-    tag.href = 'https://pro.fontawesome.com/releases/v5.10.0/css/all.css';
+window._frt.loadScriptFile = (url) => {
+    let tag = document.createElement('script');
+    tag.src = url;
     tag.crossorigin = 'anonymous';
     document.head.appendChild(tag);
+}
+
+/**
+ * Dynamically load Twitter's Bootstrap
+ */
+window._frt.loadBootstrap = () => {
+    window._frt.loadStyleSheet('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css');
+    window._frt.loadScriptFile('https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js');
+}
+
+/**
+ * Dynamically load Font Awesome
+ */
+window._frt.loadFontAwesome = () => {
+    window._frt.loadStyleSheet('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css');
+}
+
+/**
+ * Async sleep implementation in JS
+ * @param {number} msec Sleep length
+ */
+window._frt.sleep = (msec) => {
+    // eslint-disable-next-line no-new
+    new Promise(
+        // eslint-disable-next-line no-unused-vars
+        resolve => setTimeout(_ => resolve(), msec)
+    );
 }
 
 /**
  * Sleep implementation in JS
- * @param {number} ms Sleep length
+ * @param {number} msec Sleep length
  */
-window._frt.sleep = (ms) => {
-    ms += new Date().getTime();
-    while (new Date() < ms) {
-        // noinspection BadExpressionStatementJS
-        true;
+window._frt.sleepSync = (msec) => {
+    msec += new Date().getTime();
+    while (new Date() < msec) {
+        continue;
     }
 }
 
