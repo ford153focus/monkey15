@@ -1,4 +1,4 @@
-let forbiddenGameLinks = [
+let unwantedGames = [
     'Casino',
     'Just Chatting',
     'Poker',
@@ -6,17 +6,28 @@ let forbiddenGameLinks = [
     'Virtual Casino'
 ];
 
-let forbiddenStreamNames = [
+let unwantedStreamNames = [
     'казино',
     'слоты'
 ];
 
 setInterval(() => {
-    for (const item of document.querySelectorAll('.tw-mg-b-2')) {
-        let gameLink = item.querySelector('a[href^="/directory/game/"]');
-        if (gameLink !== null && forbiddenGameLinks.includes(gameLink.innerText)) item.parentNode.remove();
+    let streams = document.querySelectorAll('div.tw-tower > div');
+    streams = Array.from(streams);
+    streams.shift(); //1st element is not stream
 
-        let streamName = item.querySelector('h3');
-        if (streamName !== null && forbiddenStreamNames.includes(streamName.innerText)) item.parentNode.remove();
+    for (const stream of streams) {
+        let streamName = stream.querySelector('h3').innerText.toLowerCase();
+        let gameName = stream.querySelector('a[data-a-target="preview-card-game-link"]').innerText;
+
+        if (unwantedGames.includes(gameName)) {
+            stream.remove();
+        }
+
+        for (const unwantedStreamName of unwantedStreamNames) {
+            if (streamName.includes(unwantedStreamName)) {
+                stream.remove();
+            }
+        }
     }
 }, 5310);

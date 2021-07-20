@@ -1,3 +1,4 @@
 setInterval(function () {
-    document.querySelector('.tw-button.tw-button--success')?.click();
+    let bonusButton = document.querySelector('button[aria-label="Claim Bonus"]');
+    if (bonusButton !== null) bonusButton.click();
 }, 1500);
