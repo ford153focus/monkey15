@@ -64,7 +64,7 @@ class AvitoHideUtility {
             hideButton.className = 'hide-this-ad';
 
             let favWrapper = advert.querySelector('div[class^="iva-item-favoritesStep"] span[class^="tooltip-target-wrapper"]');
-            favWrapper.appendChild(hideButton);
+            if (favWrapper !== null) favWrapper.appendChild(hideButton);
         }
 
         for (let hideButton of document.querySelectorAll('div.hide-this-ad')) {
