@@ -1,14 +1,28 @@
-// eslint-disable-next-line no-unused-vars
-function filter() {
-    let vacancies = new Set([
-        ...document.querySelectorAll('[data-qa="vacancy-serp__vacancy_rejected"]'),
-        ...document.querySelectorAll('[data-qa="vacancy-serp__vacancy_invited"]'),
-        ...document.querySelectorAll('[data-qa="vacancy-serp__vacancy_responded"]')
-    ]);
+function filterProcessedVacancies() {
+    for (const keyword of ["rejected", "invited", "responded"]) {
+        let vacancies = document.querySelectorAll(`[data-qa="vacancy-serp__vacancy_${keyword}"]`);
+        for (const vacancy of vacancies) {
+            if (vacancy.href.search(/\d+$/) > -1) {
+                vacancy.parentNode.parentNode.parentNode.remove()
+            }
+        }
+    }
+}
 
+function filterUnwantedVacancies() {
+    keywords = [
+        'кассир',
+        'продавец'
+    ];
+
+    let vacancies = document.querySelectorAll('div.vacancy-serp-item');
     for (const vacancy of vacancies) {
-        if (vacancy.href.search(/\d+$/) > -1) {
-            vacancy.parentNode.parentNode.parentNode.remove()
+        let vacancyTitle = vacancy.querySelector('[data-qa="vacancy-serp__vacancy-title"]')
+                                   .innerText
+                                   .toLowerCase();
+
+        for (const keyword of keywords) {
+            if (vacancyTitle.includes(keyword)) vacancy.style.display = 'none';
         }
     }
 }
@@ -25,4 +39,5 @@ document.querySelector('[name="search_period"]')
 document.getElementById('filterProccesed').onclick = filter
 */
 
-// filter();
+filterProcessedVacancies();
+filterUnwantedVacancies();
